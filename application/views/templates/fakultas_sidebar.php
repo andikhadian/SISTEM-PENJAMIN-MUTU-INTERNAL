@@ -23,7 +23,6 @@
                 <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-info-circle"></i> <span>Tentang</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="<?= base_url('Fakultas/Tentang') ?>">Tentang FTI</a></li>
-                    <li><a class="nav-link" href="<?= base_url('Fakultas/Tentang/sambutan_dekan') ?>">Sambutan Dekan</a></li>
                     <li><a class="nav-link" href="<?= base_url('Fakultas/Tentang/visi_misi') ?>">Visi - Misi</a></li>
                     <li><a class="nav-link" href="<?= base_url('Fakultas/Tentang/struktur_organisasi') ?>">Struktur Organisasi</a></li>
                 </ul>

@@ -28,8 +28,8 @@
                                             </th>
                                             <th>Nama Dokumen</th>
                                             <th>Kategori Dokumen</th>
-                                            <th>File Dokumen</th>
                                             <th>Diunggah Pada</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <?php
@@ -55,10 +55,16 @@
                                                 ?>
                                                 <div class="badge font-weight-bold <?= $badge ?>"><?= $icon . $item['kategori_dokumen']; ?></div>
                                             </td>
-                                            <td style="vertical-align: middle;">
-                                                <a download href="<?= base_url('assets/Documents/') . $item['kelompok_dokumen'] . '/' . $item['jenis_dokumen'] . '/' . $item['kategori_dokumen'] . '/' . $item['file_dokumen']; ?>"><i class="fa fa-download mr-2" aria-hidden="true"></i>Unduh File</a>
-                                            </td>
                                             <td style="vertical-align: middle;"><?= date('d M Y', $item['tgl_dokumen_masuk']); ?></td>
+                                            <td>
+                                                <a href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info my-3"><i class="fa fa-cog mr-2"></i> Menu</a>
+                                                <div class="dropdown-menu">
+                                                    <div class="dropdown-title">Menu Pilihan</div>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item has-icon" target="_blank" href="<?= base_url('assets/Documents/') . $item['kelompok_dokumen'] . '/' . $item['jenis_dokumen'] . '/' . $item['kategori_dokumen'] . '/' . $item['file_dokumen']; ?>"><i class="fa fa-eye text-primary" aria-hidden="true"></i> Lihat File</a>
+                                                    <a class="dropdown-item has-icon" download href="<?= base_url('assets/Documents/') . $item['kelompok_dokumen'] . '/' . $item['jenis_dokumen'] . '/' . $item['kategori_dokumen'] . '/' . $item['file_dokumen']; ?>"><i class="fa fa-download text-primary" aria-hidden="true"></i> Unduh File</a>
+                                                </div>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </table>
