@@ -78,13 +78,13 @@
                             <ul class="list-unstyled list-unstyled-border">
                                 <?php foreach ($latestReportByAll as $lr) : ?>
                                     <li class="media">
-                                        <?php if ($lr['kategori_dokumen'] == 'GAMBAR') {
+                                        <?php if ($lr['format_dokumen'] == 'GAMBAR') {
                                             $icon = '<i class="fas fa-image fa-10x mt-2"></i>';
                                             $color = 'badge-warning';
-                                        } else if ($lr['kategori_dokumen'] == 'PDF') {
+                                        } else if ($lr['format_dokumen'] == 'PDF') {
                                             $icon = '<i class="fas fa-file-pdf fa-10x mt-2"></i>';
                                             $color = 'badge-danger';
-                                        } else if ($lr['kategori_dokumen'] == 'WORD') {
+                                        } else if ($lr['format_dokumen'] == 'WORD') {
                                             $icon = '<i class="fa fa-file-word mt-2"></i>';
                                             $color = 'badge-info';
                                         }
@@ -112,8 +112,8 @@
                                             </div>
                                             <div class="media-title"><?= $lr['nama_dokumen']; ?></div>
                                             <span class="text-small text-muted">Dokumen diunggah untuk kelompok dokumen
-                                                <span class="text-dark"><?= $lr['kelompok_dokumen']; ?></span>, kedalam jenis dokumen
-                                                <span class="text-dark"> <?= $lr['jenis_dokumen']; ?></span> dan mengkategorikan dokumen sebagai <span class="text-dark"><?= $lr['kategori_dokumen']; ?></span></span>
+                                                <span class="text-dark"><?= $lr['pemilik_dokumen']; ?></span>, kedalam jenis dokumen
+                                                <span class="text-dark"> <?= $lr['jenis_dokumen']; ?></span> dan mengkategorikan dokumen sebagai <span class="text-dark"><?= $lr['format_dokumen']; ?></span></span>
                                         </div>
                                     </li>
                                 <?php endforeach; ?>

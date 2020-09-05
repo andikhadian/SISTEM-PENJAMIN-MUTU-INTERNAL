@@ -23,10 +23,10 @@ class Unggah extends CI_Controller
         $this->form_validation->set_rules('nama_dokumen', 'Nama Dokumen', 'required', [
             'required' => 'Nama Dokumen harus diisi'
         ]);
-        $this->form_validation->set_rules('kategori_dokumen', 'Kategori Dokumen', 'required', [
+        $this->form_validation->set_rules('format_dokumen', 'Kategori Dokumen', 'required', [
             'required' => 'Kategori Dokumen harus diisi'
         ]);
-        $this->form_validation->set_rules('kelompok_dokumen', 'Fakultas Dokumen', 'required', [
+        $this->form_validation->set_rules('pemilik_dokumen', 'Fakultas Dokumen', 'required', [
             'required' => 'Kelompok Dokumen harus diisi'
         ]);
         $this->form_validation->set_rules('jenis_dokumen', 'Jenis Dokumen', 'required', [
@@ -39,24 +39,24 @@ class Unggah extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $upload = $_FILES['file_dokumen']['name'];
-            $kelompok_dokumen = $this->input->post('kelompok_dokumen');
+            $pemilik_dokumen = $this->input->post('pemilik_dokumen');
             $jenis_dokumen = $this->input->post('jenis_dokumen');
-            $kategori_dokumen = $this->input->post('kategori_dokumen');
+            $format_dokumen = $this->input->post('format_dokumen');
             $nama_dokumen = $this->input->post('nama_dokumen');
 
-            if ($kategori_dokumen == 'GAMBAR') {
+            if ($format_dokumen == 'GAMBAR') {
                 $allowed = 'jpg|jpeg|png';
             }
-            if ($kategori_dokumen == 'PDF') {
+            if ($format_dokumen == 'PDF') {
                 $allowed = 'pdf';
-            } else if ($kategori_dokumen == 'WORD') {
+            } else if ($format_dokumen == 'WORD') {
                 $allowed = 'doc|docx';
             }
 
             if ($upload) {
                 $config['allowed_types'] = $allowed;
                 $config['max_size']     = '5000';
-                $config['upload_path'] = './assets/Documents/' . $kelompok_dokumen . '/' . $jenis_dokumen . '/' . $kategori_dokumen . '/';
+                $config['upload_path'] = './assets/Documents/' . $pemilik_dokumen . '/' . $jenis_dokumen . '/' . $format_dokumen . '/';
                 $config['encrypt_name'] = true;
 
                 $this->load->library('upload', $config);
@@ -73,9 +73,9 @@ class Unggah extends CI_Controller
 
             $data = [
                 'nama_dokumen' => $nama_dokumen,
-                'kategori_dokumen' => $kategori_dokumen,
+                'format_dokumen' => $format_dokumen,
                 'jenis_dokumen' => $jenis_dokumen,
-                'kelompok_dokumen' => $kelompok_dokumen,
+                'pemilik_dokumen' => $pemilik_dokumen,
                 'file_dokumen' => $file_dokumen,
                 'tgl_dokumen_masuk' => time()
             ];

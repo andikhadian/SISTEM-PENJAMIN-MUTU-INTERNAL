@@ -20,9 +20,9 @@ class Dashboard extends CI_Controller
         ];
         $data['user'] = $this->auth->getWhere('user', $S_UserId);
         $data['countUser'] = $this->admin->getNumWhere('user', ['role' => 'FAKULTAS']);
-        $data['countFti'] = $this->admin->getNumWhere('dokumen', ['kelompok_dokumen' => 'FTI']);
-        $data['countSi'] = $this->admin->getNumWhere('dokumen', ['kelompok_dokumen' => 'SI']);
-        $data['countIk'] = $this->admin->getNumWhere('dokumen', ['kelompok_dokumen' => 'IK']);
+        $data['countFti'] = $this->admin->getNumWhere('dokumen', ['pemilik_dokumen' => 'FTI']);
+        $data['countSi'] = $this->admin->getNumWhere('dokumen', ['pemilik_dokumen' => 'SI']);
+        $data['countIk'] = $this->admin->getNumWhere('dokumen', ['pemilik_dokumen' => 'IK']);
         $data['countDokumen'] = $this->admin->getNum('dokumen');
         $data['latestReportByAll'] = $this->admin->getAllByDesc('dokumen', 'tgl_dokumen_masuk', 'DESC', 50);
 

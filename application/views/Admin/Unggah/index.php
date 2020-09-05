@@ -32,15 +32,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="kelompok_dokumen">Kelompok Dokumen</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="pemilik_dokumen">Pemilik Dokumen</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <select name="kelompok_dokumen" id="kelompok_dokumen" class="form-control">
-                                            <option value="">-- Pilih Kelompok Dokumen --</option>
+                                        <select name="pemilik_dokumen" id="pemilik_dokumen" class="form-control">
+                                            <option value="">-- Pilih Pemilik Dokumen --</option>
                                             <option value="FTI">FTI</option>
                                             <option value="SI">SI</option>
                                             <option value="IK">IK</option>
                                         </select>
-                                        <?= form_error('kelompok_dokumen', '<small class="text-danger">', '</small>'); ?>
+                                        <?= form_error('pemilik_dokumen', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -57,19 +57,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="kategori_dokumen">Kategori Dokumen</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="format_dokumen">Format Dokumen</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <select name="kategori_dokumen" id="kategori_dokumen" class="form-control">
-                                            <option value="">-- Pilih Kategori Dokumen --</option>
+                                        <select name="format_dokumen" id="format_dokumen" class="form-control">
+                                            <option value="">-- Pilih Format Dokumen --</option>
                                             <option value="GAMBAR">GAMBAR</option>
                                             <option value="PDF">PDF</option>
                                             <option value="WORD">WORD</option>
                                         </select>
-                                        <?= form_error('kategori_dokumen', '<small class="text-danger">', '</small>'); ?>
+                                        <?= form_error('format_dokumen', '<small class="text-danger">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="file_dokumen">Unggah Dokumen</label>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3" for="file_dokumen">Dokumen yang diunggah</label>
                                     <div class="col-sm-12 col-md-7">
                                         <input type="file" class="form-control w-100 pb-5 pt-4" id="file_dokumen" name="file_dokumen">
                                         <?= form_error('file_dokumen', '<small class="text-danger">', '</small>'); ?>
